@@ -10,6 +10,6 @@ import java.util.List;
 public interface FollowRepository extends MongoRepository<Follow, String> {
     void deleteFollowByUsernameAndFollowUsername(String username, String followUsername);
     List<Follow> findAllByUsername(String username);
-    List<Follow> findAllByFollowUsername(String username);
-    Boolean existsFollowByUsernameAndFollowUsername(String username, String followUsername);
+    List<Follow> findAllByFollowingUsername(String username);
+    Boolean existsFollowByUsernameAndFollowingUsername(String username, String followUsername);
 }

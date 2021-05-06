@@ -33,11 +33,11 @@ public class FollowLogicImpl implements FollowLogic {
 
     @Override
     public List<Follow> getFollowers(String username) {
-        return followRepository.findAllByFollowUsername(username);
+        return followRepository.findAllByFollowingUsername(username);
     }
 
     @Override
     public Boolean checkAlreadyExist(String username, String followUsername) {
-        return followRepository.existsFollowByUsernameAndFollowUsername(username, followUsername);
+        return followRepository.existsFollowByUsernameAndFollowingUsername(username, followUsername);
     }
 }
