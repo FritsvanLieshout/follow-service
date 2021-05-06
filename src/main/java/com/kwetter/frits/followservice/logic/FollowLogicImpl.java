@@ -23,7 +23,7 @@ public class FollowLogicImpl implements FollowLogic {
 
     @Override
     public void unFollowUser(Follow follow) {
-        followRepository.deleteFollowByUsernameAndFollowUsername(follow.getUsername(), follow.getFollowUsername());
+        followRepository.deleteFollowByUsernameAndFollowUsername(follow.getUsername(), follow.getFollowingUsername());
     }
 
     @Override

@@ -27,11 +27,11 @@ public class FollowController {
     @PostMapping("/user/follow")
     public ResponseEntity<Follow> followUser(@RequestBody FollowViewModel follow) {
         try {
-            if (follow.getUsername() != null && follow.getFollowUsername() != null) {
-                if (followLogic.checkAlreadyExist(follow.getUsername(), follow.getFollowUsername())) {
+            if (follow.getUsername() != null && follow.getFollowingUsername() != null) {
+                if (followLogic.checkAlreadyExist(follow.getUsername(), follow.getFollowingUsername())) {
                     return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
                 }
-                var result = followLogic.followUser(new Follow(follow.getUsername(), follow.getFollowUsername()));
+                var result = followLogic.followUser(new Follow(follow.getUsername(), follow.getFollowingUsername()));
                 timelineLogic.timeLineFollow(result);
                 return new ResponseEntity<>(result, HttpStatus.OK);
             }
@@ -45,9 +45,9 @@ public class FollowController {
     @PostMapping("/user/unfollow")
     public ResponseEntity<Follow> unFollowUser(@RequestBody FollowViewModel follow) {
         try {
-            if (follow.getUsername() != null && follow.getFollowUsername() != null) {
-                if (followLogic.checkAlreadyExist(follow.getUsername(), follow.getFollowUsername())) {
-                    var object = new Follow(follow.getUsername(), follow.getFollowUsername());
+            if (follow.getUsername() != null && follow.getFollowingUsername() != null) {
+                if (followLogic.checkAlreadyExist(follow.getUsername(), follow.getFollowingUsername())) {
+                    var object = new Follow(follow.getUsername(), follow.getFollowingUsername());
                     followLogic.unFollowUser(object);
                     timelineLogic.timeLineUnfollow(object);
                     return new ResponseEntity<>(null, HttpStatus.OK);

@@ -10,13 +10,13 @@ public class Follow {
     private String id;
 
     private String username;
-    private String followUsername;
+    private String followingUsername;
 
     public Follow() {}
 
-    public Follow(String username, String followUsername) {
+    public Follow(String username, String followingUsername) {
         this.username = username;
-        this.followUsername = followUsername;
+        this.followingUsername = followingUsername;
     }
 
     public String getUsername() {
@@ -27,11 +27,11 @@ public class Follow {
         this.username = username;
     }
 
-    public String getFollowUsername() {
-        return followUsername;
+    public String getFollowingUsername() {
+        return followingUsername;
     }
 
-    public void setFollowUsername(String followUsername) {
-        this.followUsername = followUsername;
+    public void setFollowingUsername(String followingUsername) {
+        this.followingUsername = followingUsername;
     }
 }

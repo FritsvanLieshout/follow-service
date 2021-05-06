@@ -3,7 +3,7 @@ package com.kwetter.frits.followservice.entity;
 public class FollowViewModel {
 
     private String username;
-    private String followUsername;
+    private String followingUsername;
 
     public String getUsername() {
         return username;
@@ -13,11 +13,11 @@ public class FollowViewModel {
         this.username = username;
     }
 
-    public String getFollowUsername() {
-        return followUsername;
+    public String getFollowingUsername() {
+        return followingUsername;
     }
 
-    public void setFollowUsername(String followUsername) {
-        this.followUsername = followUsername;
+    public void setFollowingUsername(String followingUsername) {
+        this.followingUsername = followingUsername;
     }
 }

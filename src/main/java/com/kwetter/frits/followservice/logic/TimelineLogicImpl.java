@@ -40,7 +40,7 @@ public class TimelineLogicImpl {
 
     public void timeLineFollow(Follow follow) throws Exception {
         try {
-            FollowTimelineDTO followTimelineDTO = new FollowTimelineDTO(follow.getUsername(), follow.getFollowUsername());
+            FollowTimelineDTO followTimelineDTO = new FollowTimelineDTO(follow.getUsername(), follow.getFollowingUsername());
             String message = objectMapper.writeValueAsString(followTimelineDTO);
             ProducerRecord<String, String> record = new ProducerRecord<>("user-follow", message);
             producer.send(record);
@@ -52,7 +52,7 @@ public class TimelineLogicImpl {
 
     public void timeLineUnfollow(Follow follow) throws Exception {
         try {
-            FollowTimelineDTO followTimelineDTO = new FollowTimelineDTO(follow.getUsername(), follow.getFollowUsername());
+            FollowTimelineDTO followTimelineDTO = new FollowTimelineDTO(follow.getUsername(), follow.getFollowingUsername());
             String message = objectMapper.writeValueAsString(followTimelineDTO);
             ProducerRecord<String, String> record = new ProducerRecord<>("user-unfollow", message);
             producer.send(record);
