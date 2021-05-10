@@ -23,7 +23,7 @@ public class FollowLogicImpl implements FollowLogic {
 
     @Override
     public void unFollowUser(Follow follow) {
-        followRepository.deleteFollowByUsernameAndFollowUsername(follow.getUsername(), follow.getFollowingUsername());
+        followRepository.deleteFollowByUsernameAndFollowingUsername(follow.getUsername(), follow.getFollowingUsername());
     }
 
     @Override
@@ -37,7 +37,7 @@ public class FollowLogicImpl implements FollowLogic {
     }
 
     @Override
-    public Boolean checkAlreadyExist(String username, String followUsername) {
-        return followRepository.existsFollowByUsernameAndFollowingUsername(username, followUsername);
+    public Boolean checkAlreadyExist(String username, String followingUsername) {
+        return followRepository.existsFollowByUsernameAndFollowingUsername(username, followingUsername);
     }
 }

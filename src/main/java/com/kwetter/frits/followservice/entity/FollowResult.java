@@ -4,22 +4,22 @@ import java.util.List;
 
 public class FollowResult {
 
-    private List<Follow> followList;
+    private List<Follow> follows;
     private int count;
 
     public FollowResult() {}
 
-    public FollowResult(List<Follow> followList, int count) {
-        this.followList = followList;
+    public FollowResult(List<Follow> follows, int count) {
+        this.follows = follows;
         this.count = count;
     }
 
-    public List<Follow> getFollowList() {
-        return followList;
+    public List<Follow> getFollows() {
+        return follows;
     }
 
-    public void setFollowList(List<Follow> followList) {
-        this.followList = followList;
+    public void setFollows(List<Follow> follows) {
+        this.follows = follows;
     }
 
     public int getCount() {

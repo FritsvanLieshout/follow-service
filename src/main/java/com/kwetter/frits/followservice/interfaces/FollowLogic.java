@@ -11,5 +11,5 @@ public interface FollowLogic {
     void unFollowUser(Follow follow);
     List<Follow> getFollowing(String username);
     List<Follow> getFollowers(String username);
-    Boolean checkAlreadyExist(String username, String followUsername);
+    Boolean checkAlreadyExist(String username, String followingUsername);
 }
