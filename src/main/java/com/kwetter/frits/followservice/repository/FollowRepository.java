@@ -12,4 +12,6 @@ public interface FollowRepository extends MongoRepository<Follow, String> {
     List<Follow> findAllByUsername(String username);
     List<Follow> findAllByFollowingUsername(String username);
     Boolean existsFollowByUsernameAndFollowingUsername(String username, String followingUsername);
+    void deleteAllByUsername(String username);
+    void deleteAllByFollowingUsername(String username);
 }
